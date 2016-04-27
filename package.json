@@ -1,0 +1,21 @@
+{
+  "name": "cronlivechatfirebase",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "async": "^2.0.0-rc.3",
+    "cron": "^1.1.0",
+    "firebase": "^2.4.2",
+    "lodash": "^4.11.1",
+    "oboe": "^2.1.2"
+  },
+  "dependencies": {
+    "later": "^1.2.0"
+  }
+}
