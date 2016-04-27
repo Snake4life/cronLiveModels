@@ -4,8 +4,8 @@ var cron = require('cron'),
 	modelsUrlTpl = _.template('https://freelivechat.firebaseio.com/models/<%=source%>'),
 	modelUrlTpl = _.template('https://freelivechat.firebaseio.com/models/<%=username%>'),
 	oboe = require('oboe'),
-	async = require('async'),
-	later = require('later');
+	async = require('async');
+	//later = require('later');
 
 const bongaCashApiUrl = 'http://tools.bongacams.com/promo.php?c=301528&type=api&api_type=json';
 const chaturbateApiUrl = 'http://chaturbate.com/affiliates/api/onlinerooms/?format=json&wm=eqdcq';
@@ -59,10 +59,13 @@ function requestModels() {
 				})
 		}
 	], function (err, result) {
-		console.log(new Date().toLocaleDateString(), result);
+		console.log(new Date().toString(), result);
 	})
 }
 
-var _5minutes = later.parse.text("every 2 minutes");
+console.log('Cron start import live model...');
+var _2minutes = 1000*60*2;
 
-later.setInterval(requestModels(), _5minutes);
+setInterval(function(){
+	requestModels();
+},_2minutes);
